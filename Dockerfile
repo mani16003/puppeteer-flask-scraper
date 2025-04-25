@@ -1,4 +1,4 @@
-# ---------- Stage 1: Node.js Scraper ----------
+# 1st Stage: Node.js Scraper 
     FROM node:18-slim AS scraper
 
     ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
@@ -44,7 +44,7 @@
     ENV SCRAPE_URL=${SCRAPE_URL}
     RUN node scrape.js
     
-    # ---------- Stage 2: Python Web Server ----------
+    # 2nd Stage: Python Web Server
     FROM python:3.10-slim
     
     WORKDIR /app
